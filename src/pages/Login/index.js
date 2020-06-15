@@ -1,45 +1,54 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
+
 import api from '../../services/api';
 
-export default function Login({history}) {
+import logo from '../../assets/logo.png';
 
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+import './style.css';
 
-  async function handleSubmit(event){
-    event.preventDefault();
-    console.log(email);
-    console.log(senha);
-    const response = await api.post('/sessions', {email, senha} )
-    console.log(response)
-    /*
-    const { _id } = response.data;
-    localStorage.setItem('user', _id);
-    */
-   history.push('/dashboard');
-  }
+export default function Login({ history }) {
+    const [email, setEmail] = useState('');
 
-  return (
-    <>
-      <p> Ofereça <strong>vagas de empregos</strong> para pessoas que estão em busca de uma oportunidade</p>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email </label>
-        <input type="email"
-          id="email"
-          placeholder="Seu e-mail"
-          value={email}
-          onChange={event => setEmail(event.target.value)}
-        />
+    async function handleSubmit(event) {
+        event.preventDefault();
+        
+        const response = await api.post('/sessions', { email });
+        
+        const { _id } = response.data;
 
-        <label htmlFor="email">Senha </label>
-        <input type="password"
-          id="email"
-          placeholder="Sua Senha"
-          value={senha}
-          onChange={event => setSenha(event.target.value)}
-        />
-        <button className="btn" type="submitW">Entrar</button>
-      </form>
-    </>
-  )
+        localStorage.setItem('user', _id);
+
+        history.push('/dashboard');
+    }
+
+    return (
+        <>
+            <div className="container">
+      <img src={logo} alt="logo" />
+      <div className="content">
+
+            <p>
+            Anuncie <strong>serviços</strong> e encontre <strong>profissionais</strong> perto de você.
+            </p>
+
+            <form onSubmit={handleSubmit}>
+            <label htmlFor="email">E-MAIL *</label>
+            <input 
+                type="email" 
+                id="email" 
+                placeholder="Seu melhor e-mail"
+                value={email}
+                onChange={event => setEmail(event.target.value)}
+            />
+
+            <button className="btn" type="submit">Entrar</button>
+            </form>
+
+            <p className="pp">Não tem cadastro? </p>
+            <Link className="link" to="/register">Cadastre-se Aqui</Link>
+</div>
+</div>
+        </>
+    );
 }
