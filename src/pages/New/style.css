@@ -1,0 +1,32 @@
+.service{
+    background: #FF591C;
+    width: 100%;
+    height: 50%;
+    font-size: 28px;
+    text-align: center;
+    color: #ffffff;
+}
+
+label#thumbnail {
+    margin-bottom: 20px;
+    border: 1px dashed #ddd;
+    background-size: cover;
+    cursor: pointer;
+    height: 160px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label#thumbnail input {
+    display: none;
+}
+
+label#thumbnail.has-thumbnail {
+    border: 0;
+}
+
+label#thumbnail.has-thumbnail img{
+    display: none;
+}
