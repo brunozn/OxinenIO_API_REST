@@ -1,29 +1,32 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-import api from '../../services/api';
+//import api from '../../services/api';
 
 import logo from '../../assets/logo.png';
+import Menu from '../../components/Menu';
 
 import './style.css';
 
 export default function Login({ history }) {
     const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     async function handleSubmit(event) {
         event.preventDefault();
         
-        const response = await api.post('/sessions', { email });
+        //const response = await api.post('/sessions', { email });
         
-        const { _id } = response.data;
+        //const { _id } = response.data;
 
-        localStorage.setItem('user', _id);
+        //localStorage.setItem('user', _id);
 
         history.push('/dashboard');
     }
 
     return (
         <>
+        <Menu />
             <div className="container">
       <img src={logo} alt="logo" />
       <div className="content">
@@ -40,6 +43,15 @@ export default function Login({ history }) {
                 placeholder="Seu melhor e-mail"
                 value={email}
                 onChange={event => setEmail(event.target.value)}
+            />
+
+<label htmlFor="passaword">SENHA</label>
+            <input 
+                type="password" 
+                id="password" 
+                placeholder="Senha"
+                value={password}
+                onChange={event => setPassword(event.target.value)}
             />
 
             <button className="btn" type="submit">Entrar</button>
