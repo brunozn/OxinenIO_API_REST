@@ -20,10 +20,13 @@ export default function RegisterBasic({ history }) {
     data.append('password', password);
     data.append('TypeUser', TypeUser);
 
+    console.log("chamando o axios")
+    
+    await api.post('/users', data);
+    
+    console.log("chamando o axios", data)
 
-    await api.post('/spots', data);
-
-    history.push('/dashboard');
+    //history.push('/dashboard');
   }
 
   return (
@@ -63,6 +66,7 @@ export default function RegisterBasic({ history }) {
             onChange={event => setTypeUser(event.target.value)}
           />
           { /* <button type="submit" className="btn">Cadastrar</button>  */} 
+          <button type="submit" className="btn">Cadastrar</button>
          
         </form>
       </div>

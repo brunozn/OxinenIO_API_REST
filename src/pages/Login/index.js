@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-//import api from '../../services/api';
+import api from '../../services/api';
 
 import logo from '../../assets/logo.png';
-import Menu from '../../components/Menu';
+//import Menu from '../../components/Menu';
 
 import './style.css';
 
@@ -15,18 +15,18 @@ export default function Login({ history }) {
     async function handleSubmit(event) {
         event.preventDefault();
         
-        //const response = await api.post('/sessions', { email });
+        const response = await api.post('/login', { email, password });
         
-        //const { _id } = response.data;
+        const { _id } = response.data;
 
-        //localStorage.setItem('user', _id);
+        localStorage.setItem('user', _id);
 
         history.push('/dashboard');
     }
 
     return (
         <>
-        <Menu />
+      
             <div className="container">
       <img src={logo} alt="logo" />
       <div className="content">
@@ -49,6 +49,7 @@ export default function Login({ history }) {
             <input 
                 type="password" 
                 id="password" 
+                autocomplete="on"
                 placeholder="Senha"
                 value={password}
                 onChange={event => setPassword(event.target.value)}
