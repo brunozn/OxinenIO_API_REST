@@ -1,9 +1,8 @@
 import React, { useState} from 'react';
-//import api from '../../services/api';
-import axios from 'axios';
+import api from '../../services/api';
 
 import './style.css';
-const api_url="https://oxigenioapi.herokuapp.com";
+
 
 export default function RegisterBasic({ history }) {
   
@@ -24,25 +23,13 @@ export default function RegisterBasic({ history }) {
     data.append('TypeUser', TypeUser);
 
     console.log("chamando o axios",data);
-    var values ={
-      FullName,
-        email,
-        TypeUser,
-        password
-  
-    }
-    console.log(values);
-   
-    try{
-      const user = await axios.post(`${api_url}/users`,values);
-      console.log("novo user",user);
-    }catch(erro){
-      console.log(erro);
+    console.log("chamando o axios")
+    
+    await api.post('/users', data);
+    
+    console.log("chamando o axios", data)
 
-    }
-  
-
-    history.push('/users');
+    //history.push('/dashboard');
   }
 
   return (
