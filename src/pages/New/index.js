@@ -11,7 +11,8 @@ export default function New({ history }) {
   const [techs, setTechs] = useState('');
   const [price, setPrice] = useState('');
   const [address, setAddress] = useState('');
-
+  const [descrition, setDescrition] = useState('');
+  
   const preview = useMemo(() => {
     return thumbnail ? URL.createObjectURL(thumbnail) : null;
   }, [thumbnail])
@@ -53,6 +54,7 @@ export default function New({ history }) {
           <label htmlFor="address">Endereço *</label>
           <input
             id="address"
+            className="input-new"
             placeholder="Digite o endereço do serviço "
             value={address}
             onChange={event => setAddress(event.target.value)}
@@ -61,6 +63,7 @@ export default function New({ history }) {
           <label htmlFor="company">Serviço *</label>
           <input
             id="company"
+            className="input-new"
             placeholder="Qual o serviço? Descreva "
             value={company}
             onChange={event => setCompany(event.target.value)}
@@ -69,6 +72,7 @@ export default function New({ history }) {
           <label htmlFor="techs">Precisa-se de: * <span>(separadas por vírgula)</span></label>
           <input
             id="techs"
+            className="input-new"
             placeholder="Quais profissionais necessita?"
             value={techs}
             onChange={event => setTechs(event.target.value)}
@@ -77,9 +81,19 @@ export default function New({ history }) {
           <label htmlFor="price">VALOR * <span>(em branco para combinar)</span></label>
           <input
             id="price"
+            className="input-new"
             placeholder="Valor pago por dia"
             value={price}
             onChange={event => setPrice(event.target.value)}
+          />
+
+<label htmlFor="price">Descrição *</label>
+          <textarea
+            id="description"
+            rows="5"
+            placeholder="Descreva o serviço"
+            value={descrition}
+            onChange={event => setDescrition(event.target.value)}
           />
 
           <button type="submit" className="btn">Cadastrar</button>
