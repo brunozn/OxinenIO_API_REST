@@ -5,9 +5,10 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import New from './pages/New';
 import Home from './pages/home';
-import RegisterBasic from './pages/Register/RegisterBasic';
+import RegisterBasic from './pages/Register';
 
-import Register from './pages/Register/index';
+//import Register from './pages/Register/index'; 
+//<Route path="/register" component={Register} />
 
 export default function Routes(){
     return (
@@ -17,8 +18,8 @@ export default function Routes(){
             <Route path="/dashboard" component={Dashboard}/>
             <Route path="/new" component={New}/>
             <Route path="/home" component={Home} />
-            <Route path="/register" component={Register} />
-            <Route path="/basic" component={RegisterBasic} />
+            
+            <Route path="/register" component={RegisterBasic} />
         </Switch>
         </BrowserRouter>
     );
