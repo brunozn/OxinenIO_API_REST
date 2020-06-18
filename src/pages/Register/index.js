@@ -51,8 +51,8 @@ export default function RegisterBasic({ history }) {
   }
 
   return (
-    <div className="container-register" >
-      <div className="content-register">
+    <div className="container-register my-5" >
+      <div className="content-register my-5">
         <form onSubmit={handleSubmit}>
 
         <label>Clique na camera para adicionar foto *</label>

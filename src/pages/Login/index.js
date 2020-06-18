@@ -27,7 +27,7 @@ export default function Login({ history }) {
     return (
         <>
       
-            <div className="container">
+            <div className="caixa my-3">
       <img src={logo} alt="logo" />
       <div className="content">
 
