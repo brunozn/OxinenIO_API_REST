@@ -27,9 +27,9 @@ export default function Login({ history }) {
     return (
         <>
       
-            <div className="caixa my-3">
-      <img src={logo} alt="logo" />
-      <div className="content">
+            <div className="caixa">
+      <img className="img-logo" src={logo} alt="logo" />
+      <div className="content-login">
 
             <p>
             Anuncie <strong>serviços</strong> e encontre <strong>profissionais</strong> perto de você.
@@ -57,9 +57,11 @@ export default function Login({ history }) {
 
             <button className="btn" type="submit">Entrar</button>
             </form>
-
-            <p className="pp">Não tem cadastro? </p>
+            <div className="pp">
+            <p>Não tem cadastro? </p>
             <Link className="link" to="/register">Cadastre-se Aqui</Link>
+            </div>
+            
 </div>
 </div>
         </>

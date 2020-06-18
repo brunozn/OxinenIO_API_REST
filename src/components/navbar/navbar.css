@@ -9,9 +9,16 @@
 
 
 }
-.but{
-  
 
+.link-color{
+  color: rgba(253, 253, 253, 0.81);
+}
+
+.link-color:hover{
+  color: white;
+}
+
+.but{
   width: 100px;
   height: 30px;
   background: rgba(253, 253, 253, 0.81);

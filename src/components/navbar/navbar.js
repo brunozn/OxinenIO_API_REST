@@ -14,13 +14,10 @@ export default class navbar extends Component {
                             <span className="navbar-toggler-icon"></span>
                         </button>
 
-                    <div className="collapse navbar-collapse float-left " id="navbarSupportedContent">
-                        <ul className="navbar-nav ml-auto">
+                    <div className="collapse navbar-collapse float-right " id="navbarSupportedContent">
+                        <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            <Link className="nav-link" to ="/">Home <span className="sr-only">(current)</span></Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to ="/register">Cadastre-se</Link>
+                            <Link className="nav-link" to ="/">Home<span className="sr-only">(current)</span></Link>
                         </li>
                     
                         <li className="nav-item">
@@ -30,12 +27,13 @@ export default class navbar extends Component {
                             <Link className="nav-link " to ="">Ajuda</Link>
                         </li>
 
-
-                        
-                        
-
                     
                         </ul>
+                        
+                        <form className="form-inline my-2 my-lg-0  ml-sm-0 ml-lg-3 ">
+                        <Link className="nav-link link-color" to ="/register">Cadastre-se</Link>
+                        </form>
+
                         <form className="form-inline my-2 my-lg-0  ml-sm-0 ml-lg-3 ">
                            <Link className="btn btn-outline  but my-sm-0 " to="/login">Login</Link> 
                         </form>
