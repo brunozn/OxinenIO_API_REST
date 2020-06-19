@@ -30,7 +30,7 @@ export default function Login({ history }) {
             <div className="caixa">
       <img className="img-logo" src={logo} alt="logo" />
       <div className="content-login">
-
+<h2 className="title-login"> <strong> Faça seu login no sistema</strong> </h2>
             <p>
             Anuncie <strong>serviços</strong> e encontre <strong>profissionais</strong> perto de você.
             </p>
@@ -49,7 +49,8 @@ export default function Login({ history }) {
             <input 
                 type="password" 
                 id="password" 
-                autocomplete="on"
+                //autocomplete="on"
+                autoComplete="new-password"
                 placeholder="Senha"
                 value={password}
                 onChange={event => setPassword(event.target.value)}

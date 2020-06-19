@@ -40,7 +40,7 @@ export default function RegisterBasic({ history }) {
       const response = await api.post('/users', data); 
       console.log(response);
       if(response){
-        history.push('/dashboard');
+        history.push('/login');
       }
        
     }catch(error){
