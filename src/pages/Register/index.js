@@ -4,7 +4,7 @@ import camera from '../../assets/camera.svg';
 import './style.css';
 
 export default function RegisterBasic({ history }) {
-  const [profilePicture, setprofilePicture] = useState(null);
+  const [file, setfile] = useState(null);
   const [FullName, setFullName] = useState('');
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,38 +16,40 @@ export default function RegisterBasic({ history }) {
 
 
   const preview = useMemo(() => {
-    return profilePicture ? URL.createObjectURL(profilePicture) : null;
-  }, [profilePicture])
+    return file ? URL.createObjectURL(file) : null;
+  }, [file])
 
   async function handleSubmit(event) {
     event.preventDefault();
 
     const data = new FormData();
-
+    data.append('file',file);
     data.append('FullName', FullName);
     data.append('email', email);
     data.append('password', password);
     data.append('TypeUser', TypeUser);
+    data.append('CNPJ',CNPJ);
+    data.append('EmailProfessional',EmailProfessional);
+    data.append('AddressBusiness',AddressBusiness);
+    data.append('Telaphone',Telephone);
+    
 
-    var values = {
-      profilePicture,
-      FullName,
-      email,
-      password,
-      TypeUser,
-      CNPJ,
-      EmailProfessional,
-      AddressBusiness,
-      Telephone,
+  
+    try{
+      
+      const response = await api.post('/users', data); 
+      console.log(response);
+      if(response){
+        history.push('/dashboard');
+      }
+       
+    }catch(error){
+      console.log(error);
     }
+    
+   
+    
 
-    console.log("chamando o axios")
-
-    await api.post('/users', values);
-
-    console.log("chamando o axios", values)
-
-    //history.push('/dashboard');
   }
 
   return (
@@ -59,9 +61,9 @@ export default function RegisterBasic({ history }) {
           <label
             id="profilePicture"
             style={{ backgroundImage: `url(${preview})` }}
-            className={profilePicture ? 'has-profilePicture' : ''}
+            className={file ? 'has-profilePicture' : ''}
           >
-            <input type="file" onChange={event => setprofilePicture(event.target.files[0])} />
+            <input type="file" onChange={event => setfile(event.target.files[0])} />
             <img src={camera} alt="Select img" />
           </label>
 

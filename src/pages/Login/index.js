@@ -16,7 +16,7 @@ export default function Login({ history }) {
         event.preventDefault();
         
         const response = await api.post('/login', { email, password });
-        
+    
         const { _id } = response.data;
 
         localStorage.setItem('user', _id);
