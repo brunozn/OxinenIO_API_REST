@@ -19,7 +19,7 @@ export default function Home() {
         <div className="col-lg-7">
           <h2 className="home-h2">Tem um serviço e gostaria de encontrar alguém ? </h2>
           <h4 className="font-weight-light">Anuncie sua procura aqui e encontre trabalhadores proximos de você</h4>
-          <button className="btn but2" href="#">Cadastra-se</button>
+          <button className="btn but2" to ="/register">Cadastra-se</button>
         </div>
 
 

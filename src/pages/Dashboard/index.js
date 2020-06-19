@@ -105,7 +105,7 @@ function UserProfile(props) {
 
       <List>
 
-          {['Conta', 'Anuncios', 'Logout'].map((text, index) => (
+          {['Conta', 'Logout', 'Anuncios'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <AccountBoxIcon /> : <PowerSettingsNewIcon />}</ListItemIcon>
               <ListItemText primary={text} />

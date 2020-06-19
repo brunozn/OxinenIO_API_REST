@@ -9,7 +9,7 @@ export default class navbar extends Component {
                <nav className="navbar fixed-top navbar-expand-lg navbar-dark navbar2">
 
                 <div className="container">
-                    <Link className="navbar-brand " to ="/">OxigenIO</Link>
+                    <Link className="navbar-brand " to ="/">Mão na Massa | OxigenIO</Link>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
