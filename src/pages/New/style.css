@@ -1,0 +1,50 @@
+.service{
+    background: #FF591C;
+    width: 100%;
+    height: 50%;
+    font-size: 28px;
+    text-align: center;
+    color: #ffffff;
+}
+
+label#thumbnail {
+    margin-bottom: 20px;
+    border: 1px dashed #ddd;
+    background-size: cover;
+    cursor: pointer;
+    height: 160px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label#thumbnail input {
+    display: none;
+}
+
+label#thumbnail.has-thumbnail {
+    border: 0;
+}
+
+label#thumbnail.has-thumbnail img{
+    display: none;
+}
+
+.content form textarea {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 0 10px;
+    font-size: 14px;
+    flex-direction: row;
+  }
+
+  .content form .input-new {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    height: 35px;
+    padding: 0 15px;
+    font-size: 16px;
+  }
