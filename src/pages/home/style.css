@@ -1,0 +1,35 @@
+.home-h2{
+    margin-top: 10%;
+}
+
+@media(max-width: 800px){
+    .home-h2{
+        margin-top: 5%;
+    }
+}
+.imge{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.but2{
+    width: 200px;
+    height: 30px;
+    background: #ff4704;
+    backdrop-filter: blur(4px);
+    border-radius: 5px;
+    border-style: none;
+    color:rgba(253, 253, 253, 0.81);
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 5px;
+    text-decoration: none;
+  }
+  .but2:hover{
+    background-color:#db4b16d0;
+    color: white;
+  }
+  
