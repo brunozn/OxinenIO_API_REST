@@ -7,11 +7,11 @@ import camera from '../../assets/camera.svg';
 
 export default function New({ history }) {
   const [file, setFile] = useState(null);
-  const [company, setCompany] = useState('');
-  const [techs, setTechs] = useState('');
-  const [price, setPrice] = useState('');
-  const [address, setAddress] = useState('');
-  const [descrition, setDescrition] = useState('');
+  const [serviceAddress, setServiceAddress] = useState('');
+  const [service, setService] = useState('');
+  const [neededdService, setNeededdService] = useState('');
+  const [money, setMoney] = useState('');
+  const [briefDescription, setBriefDescription] = useState('');
   
   const preview = useMemo(() => {
     return file ? URL.createObjectURL(file) : null;
@@ -21,19 +21,26 @@ export default function New({ history }) {
     event.preventDefault();
 
     const data = new FormData();
-    //const user_id = localStorage.getItem('user');
-    const user_id = '5eec63216edb020021a2fff9';
+    const id = localStorage.getItem('user');
+    
 
     data.append('file', file);
-    data.append('company', company);
-    data.append('techs', techs);
-    data.append('price', price);
+    data.append('serviceAddress', serviceAddress);
+    data.append('service', service);
+    data.append('neededService', neededdService);
+    data.append('money',money);
+    data.append('briefDescription',briefDescription);
+    try{
+      const response = await api.post(`/advert/${id}`,data);
+      console.log(response);
+      if(response){
+        history.push('/dashboard');
+      }
+    }catch(error){
+      console.log(error);
+    }
 
-    await api.post('/advert', data, {
-      headers: { user_id }
-    });
-
-    history.push('/dashboard');
+    
   }
 
   return (
@@ -57,8 +64,8 @@ export default function New({ history }) {
             id="address"
             className="input-new"
             placeholder="Digite o endereço do serviço "
-            value={address}
-            onChange={event => setAddress(event.target.value)}
+            value={serviceAddress}
+            onChange={event => setServiceAddress(event.target.value)}
           />
 
           <label htmlFor="company">Serviço *</label>
@@ -66,8 +73,8 @@ export default function New({ history }) {
             id="company"
             className="input-new"
             placeholder="Qual o serviço? Descreva "
-            value={company}
-            onChange={event => setCompany(event.target.value)}
+            value={service}
+            onChange={event => setService(event.target.value)}
           />
 
           <label htmlFor="techs">Precisa-se de: * <span>(separadas por vírgula)</span></label>
@@ -75,8 +82,8 @@ export default function New({ history }) {
             id="techs"
             className="input-new"
             placeholder="Quais profissionais necessita?"
-            value={techs}
-            onChange={event => setTechs(event.target.value)}
+            value={neededdService}
+            onChange={event => setNeededdService(event.target.value)}
           />
 
           <label htmlFor="price">VALOR * <span>(em branco para combinar)</span></label>
@@ -84,8 +91,8 @@ export default function New({ history }) {
             id="price"
             className="input-new"
             placeholder="Valor pago por dia"
-            value={price}
-            onChange={event => setPrice(event.target.value)}
+            value={money}
+            onChange={event => setMoney(event.target.value)}
           />
 
 <label htmlFor="price">Descrição *</label>
@@ -93,8 +100,8 @@ export default function New({ history }) {
             id="description"
             rows="5"
             placeholder="Descreva o serviço"
-            value={descrition}
-            onChange={event => setDescrition(event.target.value)}
+            value={briefDescription}
+            onChange={event => setBriefDescription(event.target.value)}
           />
 
           <button type="submit" className="btn">Cadastrar</button>

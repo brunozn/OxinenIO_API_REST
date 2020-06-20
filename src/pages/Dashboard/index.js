@@ -80,12 +80,18 @@ function UserProfile(props) {
 
     useEffect(() => {
         async function loadSpots() {
-            const user_id = localStorage.getItem('user');
-            const response = await api.get('/dashboard', {
-                headers: { user_id }
-            });
+           const id = localStorage.getItem('user');
+            try{
 
-            setSpots(response.data);
+              const response = await api.get(`/advert/${id}`)
+              console.log(response.data);
+              setSpots(response.data);
+            }catch(error){
+              console.log("busca anuncios",error);
+            }
+            
+
+            
         }
 
         loadSpots();
