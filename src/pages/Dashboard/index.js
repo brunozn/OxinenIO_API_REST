@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 //import CssBaseline from '@material-ui/core/CssBaseline';
@@ -22,7 +22,7 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 
 import Dash from '../Dashboard/components';
-import api from '../../services/api';
+
 
 const drawerWidth = 240;
 
@@ -76,26 +76,7 @@ function UserProfile(props) {
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const [spots, setSpots] = useState([]);
-
-    useEffect(() => {
-        async function loadSpots() {
-           const id = localStorage.getItem('user');
-            try{
-
-              const response = await api.get(`/advert/${id}`)
-              console.log(response.data);
-              setSpots(response.data);
-            }catch(error){
-              console.log("busca anuncios",error);
-            }
-            
-
-            
-        }
-
-        loadSpots();
-    }, [])
+ 
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);

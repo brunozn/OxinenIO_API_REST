@@ -10,12 +10,14 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function loadSpots() {
-      const user_id = localStorage.getItem('user');
-      const response = await api.get('aqui vai a rota que lista os anuncios ', {
-        headers: { user_id }
-      });
-
-      setSpots(response.data);
+          const id = localStorage.getItem('user');
+            try{
+              const response = await api.get(`/advert/${id}`)
+              console.log(response.data);
+              setSpots(response.data);
+            }catch(error){
+              console.log("busca anuncios",error);
+            }
     }
 
     loadSpots();
@@ -29,11 +31,12 @@ export default function Dashboard() {
           <ul className="spot-list">
             {spots.map(spot => (
               <li key={spot._id}>
-                <header style={{ backgroundImage: `url(${spot.thumbnail_url})` }} />
-                <strong>{spot.company}</strong>
-                <strong>{spot.address}</strong>
-                <span> {spot.techs} </span>
-                <span>{spot.price ? `R$${spot.price}/dia` : 'GRATUITO'}</span>
+                <header style={{ backgroundImage: `url(${spot.photoAdvert})` }} />
+                <strong>{spot.serviceAddress}</strong>
+                <strong>{spot.service}</strong>
+                <strong>{spot.needService}</strong>
+                <span> {spot.briefDescription} </span>
+                <span>{spot.money ? `R$${spot.money}/dia` : 'GRATUITO'}</span>
               </li>
             ))}
           </ul>
