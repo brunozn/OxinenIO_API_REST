@@ -30,37 +30,34 @@ export default function Login({ history }) {
             <div className="caixa">
       <img className="img-logo" src={logo} alt="logo" />
       <div className="content-login">
-<h2 className="title-login"> <strong> Faça seu login no sistema</strong> </h2>
-            <p>
-            Anuncie <strong>serviços</strong> e encontre <strong>profissionais</strong> perto de você.
-            </p>
-
+<h2 className="title-login"> <strong> LOGIN</strong> </h2>
+<br></br>
+<br></br>
+<br></br>
             <form onSubmit={handleSubmit}>
-            <label htmlFor="email">E-MAIL *</label>
             <input 
                 type="email" 
                 id="email" 
-                placeholder="Seu melhor e-mail"
+                placeholder="Entre com seu e-mail"
                 value={email}
                 onChange={event => setEmail(event.target.value)}
             />
-
-<label htmlFor="passaword">SENHA</label>
+            <br></br>
             <input 
                 type="password" 
                 id="password" 
                 //autocomplete="on"
                 autoComplete="new-password"
-                placeholder="Senha"
+                placeholder="Digite sua senha"
                 value={password}
                 onChange={event => setPassword(event.target.value)}
             />
-
+            <br></br><br></br>
             <button className="btn" type="submit">Entrar</button>
             </form>
-            <div className="pp">
-            <p>Não tem cadastro? </p>
-            <Link className="link" to="/register">Cadastre-se Aqui</Link>
+            <div className="pp flex">
+                <p className="ntr">Não tem cadastro? </p>
+                <Link className="link" to="/register">Cadastre-se Aqui</Link>
             </div>
             
 </div>
