@@ -57,7 +57,7 @@ export default function RegisterBasic({ history }) {
       <div className="content-register my-5">
         <form onSubmit={handleSubmit}>
 
-        <label>Clique na camera para adicionar foto *</label>
+        <label id="label1">Clique na camera para adicionar foto</label>
           <label
             id="profilePicture"
             style={{ backgroundImage: `url(${preview})` }}
@@ -68,7 +68,7 @@ export default function RegisterBasic({ history }) {
           </label>
 
 
-          <label htmlFor="FullName">Nome Completo</label>
+          <label id="label1" htmlFor="FullName">Nome Completo</label>
           <input
             id="FullName"
             placeholder="Digite seu nome completo "
@@ -76,7 +76,7 @@ export default function RegisterBasic({ history }) {
             onChange={event => setFullName(event.target.value)}
           />
 <div className="group">
-          <label className="label-empresa" htmlFor="email">E-mail*</label>
+          <label id="label1" className="label-empresa" htmlFor="email">E-mail</label>
           <input
             id="email"
             className="input-big"
@@ -85,7 +85,7 @@ export default function RegisterBasic({ history }) {
             onChange={event => setemail(event.target.value)}
           />
 
-          <label className="label-empresa" htmlFor="password">Senha</label>
+          <label id="label1" className="label-empresa" htmlFor="password">Senha</label>
           <input
             id="password"
             className="input-big"
@@ -94,7 +94,7 @@ export default function RegisterBasic({ history }) {
             onChange={event => setPassword(event.target.value)}
           />
 </div>
-          <label htmlFor="Telefone">Tipo de Usuário</label>
+          <label id="label1" htmlFor="Telefone">Tipo de Usuário</label>
           <select
             id="TypeUser"
             value={TypeUser}
@@ -103,11 +103,11 @@ export default function RegisterBasic({ history }) {
             <option value='' disabled >Selecione uma opção</option>
             <option value='Contratante'>Contratante</option>select
           <option value='Prestador'>Prestador</option>
-          </select>
+          </select><br></br>
           <h4 className="title-empresa">Empresa</h4>
 
           <div className="group">
-          <label className="label-empresa" htmlFor="CNPJ">CNPJ</label>
+          <label id="label1" className="label-empresa" htmlFor="CNPJ">CNPJ</label>
             <input
               id="CNPJ"
               placeholder="Digite CPNJ, caso tenha "
@@ -117,7 +117,7 @@ export default function RegisterBasic({ history }) {
 
 
 
-            <label className="label-empresa" htmlFor="AddressBusiness">Endereço da Empresa</label>
+            <label id="label1" className="label-empresa" htmlFor="AddressBusiness">Endereço da Empresa</label>
             <input
               id="AddressBusiness"
               placeholder="Digite Endereço da empresa"
@@ -127,7 +127,7 @@ export default function RegisterBasic({ history }) {
           </div>
 
           <div className="group">
-            <label className="label-empresa" htmlFor="Telefone">Telefone</label>
+            <label id="label1" className="label-empresa" htmlFor="Telefone">Telefone</label>
             <input
               id="Telefone"
               placeholder="Digite um telefone para contato"
@@ -135,7 +135,7 @@ export default function RegisterBasic({ history }) {
               onChange={event => setTelephone(event.target.value)}
             />
 
-            <label className="label-empresa" htmlFor="EmailProfessional">E-mail da empresa</label>
+            <label id="label1" className="label-empresa" htmlFor="EmailProfessional">E-mail da empresa</label>
             <input
               id="EmailProfessional"
               placeholder="Digite e-mail de contato da empresa"
@@ -145,7 +145,7 @@ export default function RegisterBasic({ history }) {
           </div>
 
           { /* <button type="submit" className="btn">Cadastrar</button>  */}
-          <button type="submit" className="btn">Cadastrar</button>
+          <button type="submit" className="btn">CADASTRAR</button>
 
         </form>
       </div>

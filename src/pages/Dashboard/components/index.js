@@ -27,7 +27,7 @@ export default function Dashboard() {
       <div className="container-dash">
         <div className="content">
           <h2>VEJA SEUS ANUNCIOS:</h2>
-          <br></br>
+          <br></br><br></br>
           <ul className="spot-list">
             {spots.map(spot => (
               <li key={spot._id}>
@@ -42,7 +42,7 @@ export default function Dashboard() {
           </ul>
 
           <Link to="/new">
-            <button className="btn">Cadastrar novo serviço</button>
+            <button className="btn">NOVO SERVIÇO</button>
           </Link>
 
         </div>
