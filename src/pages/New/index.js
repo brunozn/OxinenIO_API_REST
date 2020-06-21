@@ -44,12 +44,13 @@ export default function New({ history }) {
   }
 
   return (
-    <div className="container">
-      <h2 className="service"> Cadastrando Serviço</h2>
+    <div className="container tudo">
       <div className="content">
 
         <form onSubmit={handleSubmit}>
-          <label>Clique na camera para adicionar foto do serviço *</label>
+        <h2 className="service"> CADASTRANDO SERVIÇO</h2>
+          <br></br>
+          <label className="label1">Clique na camera para adicionar foto do serviço</label>
           <label
             id="thumbnail"
             style={{ backgroundImage: `url(${preview})` }}
@@ -58,8 +59,8 @@ export default function New({ history }) {
             <input type="file" onChange={event => setFile(event.target.files[0])} />
             <img src={camera} alt="Select img" />
           </label>
-
-          <label htmlFor="address">Endereço *</label>
+          <br></br>
+          <label htmlFor="address" className="label1">Endereço </label>
           <input
             id="address"
             className="input-new"
@@ -67,8 +68,8 @@ export default function New({ history }) {
             value={serviceAddress}
             onChange={event => setServiceAddress(event.target.value)}
           />
-
-          <label htmlFor="company">Serviço *</label>
+          <br></br>
+          <label htmlFor="company" className="label1">Serviço </label>
           <input
             id="company"
             className="input-new"
@@ -76,8 +77,8 @@ export default function New({ history }) {
             value={service}
             onChange={event => setService(event.target.value)}
           />
-
-          <label htmlFor="techs">Precisa-se de: * <span>(separadas por vírgula)</span></label>
+          <br></br>
+          <label htmlFor="techs" className="label1">Precisa-se de: <span>(separadas por vírgula)</span></label>
           <input
             id="techs"
             className="input-new"
@@ -85,8 +86,11 @@ export default function New({ history }) {
             value={neededdService}
             onChange={event => setNeededdService(event.target.value)}
           />
-
-          <label htmlFor="price">VALOR * <span>(em branco para combinar)</span></label>
+          <br></br>
+          <div className="flex">
+          <label htmlFor="price" className="label1">Valor <span>(em branco para combinar)</span></label>
+          <label id="notif">valor em branco equivale á combinar</label>
+          </div>
           <input
             id="price"
             className="input-new"
@@ -94,8 +98,8 @@ export default function New({ history }) {
             value={money}
             onChange={event => setMoney(event.target.value)}
           />
-
-<label htmlFor="price">Descrição *</label>
+          <br></br>
+<label htmlFor="price" className="label1">Descrição </label>
           <textarea
             id="description"
             rows="5"
@@ -103,8 +107,8 @@ export default function New({ history }) {
             value={briefDescription}
             onChange={event => setBriefDescription(event.target.value)}
           />
-
-          <button type="submit" className="btn">Cadastrar</button>
+          <br></br>
+          <button type="submit" className="btn" id="btn-cad">CADASTRAR</button>
         </form>
       </div>
     </div>

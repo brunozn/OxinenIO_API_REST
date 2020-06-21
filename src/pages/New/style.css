@@ -1,19 +1,40 @@
+.tudo{
+    background: white;
+    box-shadow: 5px 5px 10px rgb(87, 87, 87),
+                -5px -5px 10px rgb(177, 177, 177);
+    margin-bottom: 20px;
+    margin-top: 15vh;;
+
+}
+
 .service{
-    background: #FF591C;
+    background: #DC143C;
+    padding: 15px;
     width: 100%;
     height: 50%;
-    font-size: 28px;
+    font-size: 30px;
     text-align: center;
     color: #ffffff;
+    font-weight: bolder;
+}
+
+.content .label1{
+    color: #FF591C;
+    font-size: 15px;
+}
+
+#colocar-img{
+    border: 1px solid;
 }
 
 label#thumbnail {
+    margin-top: 10px;
     margin-bottom: 20px;
-    border: 1px dashed #ddd;
-    background-size: cover;
+    box-shadow: 0px 5px 10px rgb(216, 216, 216);
+    border-radius: 10px;
     cursor: pointer;
-    height: 160px;
-    
+    height: 200px;
+    width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,4 +68,59 @@ label#thumbnail.has-thumbnail img{
     height: 35px;
     padding: 0 15px;
     font-size: 16px;
+  }
+
+
+  #address, #company, #techs, #price, #description{
+    background: none;
+    border: none;
+    border-left: 2px solid #FF591C;
+    transition: 0.2s;
+  }
+
+  #address:focus,
+  #company:focus,
+  #techs:focus,
+  #price:focus{
+      border-left: none;
+      border-bottom: 2px solid #FF591C;
+  }
+  #description:focus{
+      border: 2px solid #FF591C;
+      border-radius: 0px 15px 15px 15px;
+  }
+
+  ::placeholder{
+      font-size: 13px;
+  }
+
+  .flex{
+    display: flex; /*fica um ao lado do outro*/
+    justify-content: space-between; /*Irá dar espaço entre os itens*/
+    flex-wrap: wrap;
+  }
+
+  .flex #notif{
+      font-size: 13px;
+      color: #00CCFF;
+      text-decoration: underline;
+  }
+
+  #btn-cad{
+      margin-top: 3vh;
+      width: 100%;
+      height: 75px;
+      font-size: 25px;
+      font-weight: bolder;
+      background: #FF591C;
+      padding: 10px;
+      transition: 0.3s;
+  }
+
+  #btn-cad:hover{
+      border: 2px solid #FF591C;
+      background: none;
+      color: #FF591C;
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 10px rgb(185, 185, 185);
   }
