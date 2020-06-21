@@ -50,6 +50,7 @@ export default function New({ history }) {
         <form onSubmit={handleSubmit}>
         <h2 className="service"> CADASTRANDO SERVIÇO</h2>
           <br></br>
+          <div className="back-color">
           <label className="label1">Clique na camera para adicionar foto do serviço</label>
           <label
             id="thumbnail"
@@ -59,6 +60,7 @@ export default function New({ history }) {
             <input type="file" onChange={event => setFile(event.target.files[0])} />
             <img src={camera} alt="Select img" />
           </label>
+          </div>
           <br></br>
           <label htmlFor="address" className="label1">Endereço </label>
           <input
