@@ -6,7 +6,7 @@ import api from '../../services/api';
 import logo from '../../assets/logo.png';
 //import Menu from '../../components/Menu';
 
-import './style.css';
+//import './style.css';
 
 export default function Login({ history }) {
     const [email, setEmail] = useState('');

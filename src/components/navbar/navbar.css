@@ -1,31 +1,30 @@
 .navbar2{
-
-  background: #f87f53;
+  background: #1E88E5;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 28px;
-
+  color: #E3F2FD;
 
 }
 
 .link-color{
-  color: rgba(253, 253, 253, 0.81);
+  color: #E3F2FD;
 }
 
 .link-color:hover{
-  color: white;
+  color: #E3F2FD;
 }
 
 .but{
   width: 100px;
   height: 30px;
-  background: rgba(253, 253, 253, 0.81);
+  background: #F5F5F5;
   backdrop-filter: blur(4px);
   border-radius: 5px;
   border-style: none;
-  color: #ff4704;
+  color: #1E88E5;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -35,6 +34,8 @@
   text-decoration: none;
 }
 .but:hover{
-  background-color:#ff4704d0;
-  color: white;
+  background-color:#1E88EE;
+  color: #fafafa;
 }
+
+

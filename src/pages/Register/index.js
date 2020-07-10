@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import api from '../../services/api';
 import camera from '../../assets/camera.svg';
-import './style.css';
+//import './style.css';
 
 export default function RegisterBasic({ history }) {
   const [file, setfile] = useState(null);
